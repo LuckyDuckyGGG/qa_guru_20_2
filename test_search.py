@@ -14,8 +14,7 @@ def test_search_duckduckgo(browser_window_size):
     browser.element('[class="iconButton_icon__K7FBb iconButton_size-20__Ql3lL"]').click()
     browser.element('html').should(have.text('qa.guru'))
 
-def test_bad_search_duckduckgo(browser_window_size):
-    browser.open('https://duckduckgo.com/')
-    browser.element('[name=q]').type('qa.guru')
-    browser.element('[class="iconButton_icon__K7FBb iconButton_size-20__Ql3lL"]').click()
-    browser.element('html').should(have.text('hbd21hb12uhbdubudbf7tb23'))
+def test_search_google_emptystate(browser_window_size):
+    browser.open('https://www.google.com/')
+    browser.element('[name="q"]').type('ФЫАДТОЫФРА!?№АР!*№А(РВФАТГЗШУПВЫАТ*?("№ПАРТзГЩРТBDSAIHBDSNJGN#@(GNUDSFMD"kje9pw7ghf2nfdw').press_enter()
+    browser.element('html').should(have.text('Нет результатов для'))
